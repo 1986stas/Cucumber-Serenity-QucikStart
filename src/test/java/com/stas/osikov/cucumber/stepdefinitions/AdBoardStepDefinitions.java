@@ -2,9 +2,11 @@ package com.stas.osikov.cucumber.stepdefinitions;
 
 import com.stas.osikov.cucumber.matchers.TextMatcher;
 import com.stas.osikov.cucumber.navigation.NavigateTo;
+import com.stas.osikov.cucumber.navigation.WebBrowser;
 import com.stas.osikov.cucumber.pages.CategoryPage;
 import com.stas.osikov.cucumber.pages.CategorySearch;
 import com.stas.osikov.cucumber.pages.HomePage;
+import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -86,5 +88,10 @@ public class AdBoardStepDefinitions {
         assertThat(categorySearch.titles())
                 .allMatch(title -> TextMatcher.textOf(title).containsIgnoringCase(value));
         homePage.submit();
+    }
+
+    @After
+    public void cleanUp(){
+        WebBrowser.tearDown();
     }
 }
