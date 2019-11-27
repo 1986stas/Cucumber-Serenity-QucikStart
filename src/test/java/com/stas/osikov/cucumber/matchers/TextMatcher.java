@@ -4,7 +4,7 @@ public class TextMatcher {
 
     private String text;
 
-    public TextMatcher(String text) {
+    private TextMatcher(String text) {
         this.text = text;
     }
 

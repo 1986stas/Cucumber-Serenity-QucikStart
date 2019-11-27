@@ -51,7 +51,6 @@ public class AdBoardStepDefinitions {
         homePage.clickOnCategory(subCategory, category);
     }
 
-
     @And("check page title {string} and click on item {string}")
     public void checkPageTitleAndClickOnItem(String pageName, String item) {
         assertThat("Page is wrong", pageName, is(equalTo(categoryPage.getPageName())));
